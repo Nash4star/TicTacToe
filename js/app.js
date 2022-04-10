@@ -9,6 +9,7 @@ const Os = 'O'
 const Xs = 'X'
 // these are our players
 let currentPlayer = Xs
+// this is the starting player
 
 
 const board = () => {
@@ -28,7 +29,9 @@ const board = () => {
         }
         tile.style = String
         tile.addEventListener('click', tilePlay)
+        
     }) 
+    
 }
 // this it to make it so when you click on a tile it will slect that tile.
 // i got this information after watching some videos on how to get an area in html to 
@@ -39,17 +42,18 @@ const tilePlay = (event) => {
     //making sure my tiles are working as intended.
     const id = event.target.id
     if(!boardTiles[id]){
-        boardTiles[id] =currentPlayer
+        boardTiles[id] = currentPlayer
         event.target.innerText = currentPlayer
 
-        if(playerWin()) { 
-            winText.innerText = `${currentPlayer} + 'Wins!'`
+        if(playerWin()){
+            winText.innerText = `${currentPlayer} has won!`
             return
-            // who ever makes the matching to win the game gets this message saying that they have won!
         }
+
         currentPlayer = currentPlayer === Xs ? Os : Xs 
         // this is the way you can sycle through players so no one is playing more than one a turn.
     }
+   
 }
 
 const playerWin = () => {
@@ -87,7 +91,11 @@ const playerWin = () => {
             //wins acrosss the middle
         }
     }
+    
+    
 }
+
+
 
 
 const newGame = () => {

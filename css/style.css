@@ -8,6 +8,11 @@ body {
 p {
     text-align: center;
 }
+/* #innertext { 
+    font-display: top;
+    text-align: center;
+    color: red;
+} */
 
 * {
     box-sizing: border-box;
@@ -40,5 +45,11 @@ p {
     display: flex;
     background-color: whitesmoke;
     font-size: 190px;
+    font-display: center;
     
+}
+
+#1 {
+    text-align: center;
+    display: flex;
 }
